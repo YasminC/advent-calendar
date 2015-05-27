@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en">
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+        <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+        <!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+        <!--[if IE 8 ]><!-->    <html lang="en" class="no-js ie8">  <!--<![endif]-->
+<head>
+
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>YagmanX - Interactive Advent Calender</title>
+	<link rel="stylesheet" type="text/css" href="css/index.css"/>
+
+</head>
+<body>
+
+<div class = 'calender'></div>
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script src="js/jQuery-1.10.2.js"></script>
+
+<script>
+
+function initialize(){
+
+
+function dooropen(door)
+{
+
+var today=new Date();
+var daynow=today.getDate();
+var monthnow=today.getMonth();
+
+ //change to 11
+if (monthnow!=10 && monthnow!=0) {
+	alert("This feature opens in December. Please come back then."); return false;
+}
+if (daynow==door-1) {
+	alert("Come back tomorrow to see what's behind that door!");return false;
+}
+if (door>daynow) {
+	alert("You'll have to wait "+(door-daynow)+" days before that door's available!"); return false;
+}
+}
+
+// you don't need anything below this line
+var doorno=1;
+//for (h=0;h<rows;++h)
+//{
+//for(g=0; g<cols; ++g, ++doorno)
+//{
+//document.write('<a class="button" onClick="dooropen('+doorno+');" href="#" style="position: absolute; left:'+(x+(g*spacinghoriz))+'px; top:'+(y+(h*spacingvert))+'px;">'+doorno+'</a>');}
+//}
+
+
+
+for (i=1; i<31 ; i++) {
+$('.calender').append('<div class="door">' + i + '</div>')
+console.log('made door');
+}
+
+$('.door').click(dooropen);
+
+var day = $(this).text();
+switch(day){
+	case '1':
+	//whatever happens on this day
+	console.log('day1');
+	break;
+	case '2':
+	console.log('day2');
+	break;
+}
+alert('Merry Christmas');
+}
+
+
+window.addEventListener('load', function(e) {
+	setTimeout(function()
+		{
+			initialize();	
+		}, 200);
+	console.log('loaded js');
+});
+
+</script>
+</body>
+</html>

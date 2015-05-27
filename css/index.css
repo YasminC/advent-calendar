@@ -1,0 +1,92 @@
+.calender{
+    width:90%;
+    margin:0 auto;
+}
+
+.door{
+    /* size of box */
+    width:100%;
+    height:4.3em;
+
+    /* border style */
+    border-style:solid;
+    border-width:2px;
+    border-radius:5px;
+    border-color:#000;
+    margin:20px;
+    
+    /* text style */
+    text-align:center;
+    display:inline-block;
+    vertical-align:middle;
+    box-shadow: 10px 10px 5px #888;
+    font-size:300%;
+    color: #F00;
+    
+    /* background */
+    background-color: #FFF;
+    opacity: 0.5;
+}
+
+.door:hover {
+    background-color: #F00;
+    color: #FFF;
+}
+
+@media (min-width: 590px){
+
+.door{
+    /* size of box */
+    width:39%;
+}
+}
+@media (min-width: 1000px){
+    .door{
+    /* size of box */
+    width:28%;
+}
+}
+
+@media (min-width: 1200px){
+    .door{
+    /* size of box */
+    width:20%;
+}
+}
+
+
+@media (min-width: 1445px){
+.calender{
+    width:85%;
+    margin:0 auto;
+}
+.door {
+    /* size of box */
+    width:16%;
+    height:4.3em;
+    
+    /* border style */
+    border-style:solid;
+    border-width:2px;
+    border-radius:5px;
+    border-color:#000;
+    margin:20px;
+    
+    /* text style */
+    text-align:center;
+    display:inline-block;
+    vertical-align:middle;
+    box-shadow: 10px 10px 5px #888;
+    font-size:300%;
+    color: #F00;
+    
+    /* background */
+    background-color: #FFF;
+    opacity: 0.5;
+}
+
+.door:hover {
+    background-color: #F00;
+    color: #FFF;
+}
+}

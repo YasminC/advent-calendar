@@ -1,0 +1,144 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script>
+
+function dooropen(door)
+{
+
+today=new Date();
+daynow=today.getDate();
+monthnow=today.getMonth();
+
+// ###############################################
+// I've de-activated the date controls for testing purposes
+// Before launching, you should remove the // from the start of the next three lines that start with 'if'
+// That will ensure that people can't use the calendar before December or after January
+// And that they can't open doors early
+// ###############################################
+ 
+// if (monthnow!=11 && monthnow!=0) {alert("This feature opens in December. Please come back then."); return false;}
+// if (daynow==door-1) {alert("Come back tomorrow to see what's behind that door!");return false;}
+// if (door>daynow) {alert("You\'ll have to wait "+(
+
+if (door>4) {alert("This demonstration on my site only has the first four doors defined.");return false;}
+
+// you don't need to edit this bit 
+oNewWindow=window.open(urlsarray[door], '_blank','directories=no,height='+heightarray[door]+',width='+widtharray[door]+',location=0,menubar=0,resizable=yes,scrollbars='+scrollbarsarray[door]+',status=no,titlebar=0,toolbar=0');
+}
+
+urlsarray = new Array();
+widtharray = new Array();
+heightarray = new Array();
+scrollbarsarray= new Array();
+
+// ###############################################
+// edit variables here
+// ###############################################
+
+var x=30; // offset from left where doors begin in px
+var y=30; // offset from top where doors begin in px
+var rows=4; // number of rows of doors
+var cols=6; // number of columns of doors
+var spacinghoriz=80; // spacing between doors horizontal in px
+var spacingvert=80; // spacing between doors vertical in px
+
+
+// ###############################################
+// put your URLs, width and height in here. the scrollbarsarray[] is optional and should be set to 1 to enable scrollbars
+// ###############################################
+
+urlsarray[1]="1.htm"; widtharray[1]="200"; heightarray[1]="350";
+urlsarray[2]="2.htm"; widtharray[2]="150"; heightarray[2]="350";
+urlsarray[3]="3.htm"; widtharray[3]="250"; heightarray[3]="450";
+urlsarray[4]="4.htm"; widtharray[4]="200"; heightarray[4]="150"; scrollbarsarray[4]=1;
+
+// ###############################################
+// The first four doors work - I've provided sample doors for you to test with
+// Try opening the rest of the doors and you'll get an error message until you've added your doors in below
+// ###############################################
+
+urlsarray[5]="5.htm"; widtharray[5]="520"; heightarray[5]="550";
+urlsarray[6]="6.htm"; widtharray[6]="520"; heightarray[6]="550";
+urlsarray[7]="7.htm"; widtharray[7]="520"; heightarray[7]="550";
+urlsarray[8]="8.htm"; widtharray[8]="520"; heightarray[8]="550";
+urlsarray[9]="9.htm"; widtharray[9]="520"; heightarray[9]="550";
+urlsarray[10]="10.htm"; widtharray[10]="520"; heightarray[10]="550";
+
+urlsarray[11]="11.htm"; widtharray[11]="520"; heightarray[11]="550";
+urlsarray[12]="12.htm"; widtharray[12]="520"; heightarray[12]="550";
+urlsarray[13]="13.htm"; widtharray[13]="520"; heightarray[13]="550";
+urlsarray[14]="14.htm"; widtharray[14]="520"; heightarray[14]="550";
+urlsarray[15]="15.htm"; widtharray[15]="520"; heightarray[15]="550";
+urlsarray[16]="16.htm"; widtharray[16]="520"; heightarray[16]="550";
+urlsarray[17]="17.htm"; widtharray[17]="520"; heightarray[17]="550";
+urlsarray[18]="18.htm"; widtharray[18]="520"; heightarray[18]="550";
+urlsarray[19]="19.htm"; widtharray[19]="520"; heightarray[19]="550";
+urlsarray[20]="20.htm"; widtharray[20]="520"; heightarray[20]="550";
+
+urlsarray[21]="21.htm"; widtharray[21]="520"; heightarray[21]="550";
+urlsarray[22]="22.htm"; widtharray[22]="520"; heightarray[22]="550";
+urlsarray[23]="23.htm"; widtharray[23]="520"; heightarray[23]="550";
+urlsarray[24]="24.htm"; widtharray[24]="520"; heightarray[24]="550";
+
+
+// you don't need anything below this line
+var doorno=1;
+for (h=0;h<rows;++h)
+{
+for(g=0; g<cols; ++g, ++doorno)
+{
+document.write('<a class="button" onClick="dooropen('+doorno+');" href="#" style="position: absolute; left:'+(x+(g*spacinghoriz))+'px; top:'+(y+(h*spacingvert))+'px;">'+doorno+'</a>');}
+}
+</script>
